@@ -8,7 +8,7 @@ hex_path=/home/linuxus/Documents/C/DS3231_I2C/
 #ALL
 all: main.o general_utility_functions.o  usart0.o i2c.o ds3231.o
 	$(CC) -mmcu=$(MMCU) main.o  general_utility_functions.o usart0.o i2c.o ds3231.o -o machine_code.out
-	avr-objcopy -v -O ihex -j.text -j.data machine_code.out machine_code.hex
+	avr-objcopy -v -O ihex -j .text -j .data machine_code.out machine_code.hex
 	avrdude -C $(conf_path) -v -p atmega328p -c arduino -P /dev/ttyACM0 -U flash:w:$(hex_path)machine_code.hex:i
 
 #MAIN
