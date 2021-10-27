@@ -69,11 +69,6 @@ int main(void)
 			else
 				;//Till not completed, so, wait
 		}
-		int a = 10;
-		if(a=5)
-		{
-			++a;
-		}
 	}
 	return(0);
 }
